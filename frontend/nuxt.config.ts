@@ -1,11 +1,16 @@
 export default defineNuxtConfig({
-  ssr: false,
   devtools: { enabled: true },
   
   modules: [
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt'
   ],
+
+  typescript: {
+    strict: false,
+    typeCheck: false,
+    shim: false
+  },
 
   runtimeConfig: {
     public: {
@@ -32,11 +37,18 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/tailwind.css'],
 
-  // Optimizaciones para Vercel
   nitro: {
     preset: 'vercel'
   },
 
-
+  vite: {
+    vue: {
+      script: {
+        defineModel: true,
+        propsDestructure: true
+      }
+    }
+  },
+  
   compatibilityDate: '2025-01-01'
 })

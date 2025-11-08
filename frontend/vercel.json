@@ -1,5 +1,6 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": ".output/public"
-}
-
+    "buildCommand": "cd frontend && npm run build",
+    "outputDirectory": "frontend/.output/public",
+    "installCommand": "cd frontend && npm install",
+    "framework": "nuxtjs"
+  }

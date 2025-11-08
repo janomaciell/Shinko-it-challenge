@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  ssr: false,
   devtools: { enabled: true },
   
   modules: [
@@ -33,25 +34,9 @@ export default defineNuxtConfig({
 
   // Optimizaciones para Vercel
   nitro: {
-    preset: 'vercel',
-    output: {
-      publicDir: '.output/public'
-    }
+    preset: 'vercel'
   },
 
-  // Build optimizations
-  vite: {
-    build: {
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            'vue-vendor': ['vue', 'vue-router'],
-            'pinia-vendor': ['pinia']
-          }
-        }
-      }
-    }
-  },
-  
+
   compatibilityDate: '2025-01-01'
 })
